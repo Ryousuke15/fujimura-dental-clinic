@@ -354,3 +354,26 @@ section{padding:88px 32px}
 .feature.no-photo{grid-template-columns:1fr;max-width:760px;margin-left:auto;margin-right:auto}
 .svc-layout.no-photo{grid-template-columns:1fr;max-width:860px}
 .two-col .ph.is-missing+p{display:none}
+
+/* ミラクルデンチャー（トップ） */
+.md{background:linear-gradient(180deg,var(--white) 0%,var(--primary-pale) 100%)}
+.md-points{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px}
+.md-points li{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:26px 22px;box-shadow:var(--shadow)}
+.md-points b{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--primary);line-height:1}
+.md-points h3{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:500;margin:10px 0 8px}
+.md-points p{font-size:.84rem;color:var(--text-mid);line-height:1.9}
+.md-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.md-check,.md-fee{background:var(--white);border-radius:8px;padding:26px 28px;border:1px solid var(--border)}
+.md-check h3{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:500;color:var(--primary);margin-bottom:10px}
+.md-check ul{font-size:.88rem;color:var(--text-mid);line-height:2.1}
+.md-fee-price{font-family:'Noto Serif JP',serif;font-size:1.15rem;margin-bottom:10px}
+.md-fee-price small{font-size:.78rem;color:var(--text-mid);margin-left:6px}
+.md-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.md-btns .btn{padding:12px 28px}
+.svc-card.is-main{border-color:var(--primary);background:var(--primary-pale)}
+@media (max-width:900px){.md-points{grid-template-columns:1fr 1fr}.md-bottom{grid-template-columns:1fr}}
+@media (max-width:560px){.md-points{grid-template-columns:1fr}.md-btns .btn{flex:1 1 100%}}
+.svc-sec{scroll-margin-top:calc(var(--header-h) + 120px)}
+@media (max-width:900px){.svc-sec{scroll-margin-top:calc(var(--header-h) + 64px)}}
+.sp-only{display:none}
+@media (max-width:900px){.sp-only{display:inline}}
