@@ -1,0 +1,356 @@
+/* =========================================================
+   藤村歯科クリニック 共通スタイル
+   色・文字はここだけで管理しています（全ページ共通）
+   ========================================================= */
+:root{
+  --primary:#7b5ea7; --primary-light:#9b7dc4; --primary-pale:#f0ebf8; --primary-deep:#5d4485;
+  --accent:#b89fd4;
+  --text-dark:#1e1a2e; --text-mid:#433a55; --text-light:#685d80;
+  --bg:#fdfcff; --bg-warm:#f7f4fc; --white:#fff; --border:#ddd5ee;
+  --footer:#1a1626;
+  --shadow:0 4px 24px rgba(123,94,167,.10);
+  --header-h:96px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text-dark);line-height:1.8;font-weight:400;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.container{max-width:1140px;margin:0 auto}
+.sp-only{display:none}
+
+/* ---------- HEADER ---------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,252,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.header-top{max-width:1240px;margin:0 auto;padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{text-decoration:none;font-family:'Noto Serif JP',serif;font-size:1.12rem;font-weight:500;color:var(--primary);letter-spacing:.06em;line-height:1.3}
+.logo small{display:block;font-family:'Cormorant Garamond',serif;font-size:.78rem;font-weight:300;color:var(--text-light);letter-spacing:.16em}
+.header-info{display:flex;align-items:center;gap:22px}
+.header-hours{font-size:.72rem;color:var(--text-mid);line-height:1.6;text-align:right}
+.header-hours b{font-weight:500;color:var(--primary)}
+.header-tel{text-decoration:none;display:flex;flex-direction:column;align-items:flex-end;line-height:1.2}
+.header-tel span{font-size:.7rem;color:var(--text-light);letter-spacing:.08em}
+.header-tel strong{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--primary);letter-spacing:.04em}
+.gnav{border-top:1px solid var(--border);height:38px}
+.gnav-list{list-style:none;display:flex;justify-content:center;height:100%;max-width:1240px;margin:0 auto}
+.gnav-list>li{position:relative}
+.gnav-list>li>a{display:flex;align-items:center;height:38px;padding:0 22px;font-size:.8rem;letter-spacing:.08em;color:var(--text-mid);text-decoration:none;transition:color .2s,background .2s}
+.gnav-list>li>a:hover,.gnav-list>li>a.active{color:var(--primary);background:var(--primary-pale)}
+.has-sub>a::after{content:'';width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 8px}
+.subnav{display:none;position:absolute;top:38px;left:50%;transform:translateX(-50%);min-width:240px;list-style:none;background:var(--white);border:1px solid var(--border);border-radius:0 0 6px 6px;box-shadow:var(--shadow);padding:8px 0}
+.has-sub:hover .subnav,.has-sub:focus-within .subnav{display:block}
+.subnav a{display:block;padding:8px 22px;font-size:.8rem;color:var(--text-mid);text-decoration:none}
+.subnav a:hover{background:var(--primary-pale);color:var(--primary)}
+
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer}
+.hamburger span{display:block;width:24px;height:2px;margin:0 auto;background:var(--primary);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:99;background:var(--bg);overflow-y:auto;padding:12px 24px 120px}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:14px 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--text-dark);text-decoration:none;letter-spacing:.06em}
+.mobile-menu .sub a{padding:10px 0 10px 1.2em;font-size:.85rem;color:var(--text-mid)}
+.mobile-menu .mm-tel{margin-top:20px;background:var(--primary);color:#fff;text-align:center;border:none;border-radius:4px}
+
+/* ---------- 共通パーツ ---------- */
+main{padding-top:var(--header-h)}
+section{padding:88px 32px}
+.sec-head{margin-bottom:44px}
+.sec-head.center{text-align:center}
+.sec-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;letter-spacing:.28em;color:var(--primary);margin-bottom:6px}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:400;letter-spacing:.06em}
+.sec-title::after{content:'';display:block;width:36px;height:1px;background:var(--primary);margin-top:16px}
+.sec-head.center .sec-title::after{margin-left:auto;margin-right:auto}
+.lead{font-size:.9rem;color:var(--text-mid);line-height:2.1;max-width:640px}
+.sec-head.center .lead{margin:16px auto 0}
+.btn{display:inline-block;padding:14px 40px;border-radius:2px;font-size:.85rem;letter-spacing:.1em;text-decoration:none;transition:background .25s,color .25s,transform .2s;text-align:center}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-1px)}
+.btn-outline{border:1px solid var(--primary);color:var(--primary);background:transparent}
+.btn-outline:hover{background:var(--primary-pale)}
+.btn-more{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--primary);text-decoration:none;letter-spacing:.08em;border-bottom:1px solid var(--primary);padding-bottom:3px}
+.btn-more::after{content:'→';transition:transform .2s}
+.btn-more:hover::after{transform:translateX(4px)}
+
+/* 写真枠：画像が無いときは淡い紫のグラデーション＋ラベル */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary-pale),#e4d9f2);border-radius:6px}
+.ph img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.ph::before{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--text-light);letter-spacing:.1em}
+
+/* 診療時間表（全ページ共通） */
+.hours{width:100%;border-collapse:collapse;font-size:.82rem}
+.hours th,.hours td{padding:9px 4px;text-align:center;border-bottom:1px solid var(--border)}
+.hours thead th{background:var(--primary);color:#fff;font-weight:400;font-size:.76rem;letter-spacing:.04em}
+.hours tbody th{text-align:left;font-weight:400;white-space:nowrap;padding-left:8px;color:var(--text-dark)}
+.hours .o{color:var(--primary);font-size:.9rem}
+.hours .s{color:var(--primary);font-weight:500}
+.hours .x{color:var(--text-light)}
+.hours-note{font-size:.76rem;color:var(--text-mid);margin-top:10px;line-height:1.9}
+
+/* ---------- 下層ページの見出し ---------- */
+.page-hero{padding:72px 32px 56px;background:linear-gradient(135deg,#f0ebf8 0%,#f7f4fc 60%,#ede6f7 100%)}
+.page-hero .sec-title::after{display:none}
+.breadcrumb{list-style:none;display:flex;gap:8px;font-size:.72rem;color:var(--text-light);margin-top:14px}
+.breadcrumb li+li::before{content:'›';margin-right:8px}
+.breadcrumb a{text-decoration:none;color:var(--text-mid)}
+
+/* ---------- 予約案内（共通） ---------- */
+.reserve{background:var(--primary);color:#fff;text-align:center;padding:72px 32px}
+.reserve h2{font-family:'Noto Serif JP',serif;font-size:clamp(1.15rem,2vw,1.45rem);font-weight:400;letter-spacing:.06em;line-height:1.8}
+.reserve-box{display:grid;grid-template-columns:1fr;max-width:520px;margin:32px auto 0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:28px 24px}
+.reserve-label{font-size:.78rem;letter-spacing:.14em;color:rgba(255,255,255,.75)}
+.reserve-tel{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:300;letter-spacing:.04em;color:#fff;text-decoration:none;line-height:1.3}
+.reserve-time{font-size:.8rem;color:rgba(255,255,255,.8);line-height:1.9;margin-top:6px}
+.reserve-sub{margin-top:22px;font-size:.8rem;color:rgba(255,255,255,.8)}
+.reserve-sub a{color:#fff}
+
+/* ---------- FOOTER ---------- */
+.site-footer{background:var(--footer);color:rgba(255,255,255,.65);padding:64px 32px 28px}
+.foot-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.foot-logo{font-family:'Noto Serif JP',serif;font-size:1.15rem;color:#fff;letter-spacing:.06em;margin-bottom:14px}
+.foot-logo small{display:block;font-family:'Cormorant Garamond',serif;font-size:.8rem;color:rgba(255,255,255,.4);letter-spacing:.16em}
+.foot-addr{font-size:.82rem;line-height:2}
+.foot-addr a{color:#fff;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.04em}
+.foot-nav{list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:20px}
+.foot-nav a{font-size:.78rem;color:rgba(255,255,255,.65);text-decoration:none}
+.foot-nav a:hover{color:#fff}
+.site-footer .hours th,.site-footer .hours td{border-color:rgba(255,255,255,.12)}
+.site-footer .hours thead th{background:rgba(255,255,255,.12)}
+.site-footer .hours tbody th{color:rgba(255,255,255,.85)}
+.site-footer .hours .o,.site-footer .hours .s{color:#cdb8ec}
+.site-footer .hours .x{color:rgba(255,255,255,.3)}
+.site-footer .hours-note{color:rgba(255,255,255,.55)}
+.copyright{max-width:1140px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:.7rem;color:rgba(255,255,255,.35);letter-spacing:.06em}
+
+/* スマホ下部の固定ボタン */
+.fixed-bar{display:none}
+
+/* ---------- アニメーション ---------- */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade-up{opacity:1;transform:none;transition:none}
+}
+
+/* =========================================================
+   TOP PAGE
+   ========================================================= */
+.mv{position:relative;min-height:calc(100vh - var(--header-h));min-height:calc(100svh - var(--header-h));display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#efe8f8 0%,#f7f4fc 55%,#e9e0f5 100%)}
+.mv-photo{position:absolute;inset:0;border-radius:0}
+.mv-photo img{opacity:.9}
+.mv-photo::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(253,252,255,.94) 0%,rgba(253,252,255,.8) 45%,rgba(253,252,255,.1) 100%)}
+.mv-photo::before{display:none}
+.mv-inner{position:relative;z-index:3;width:100%;max-width:1140px;margin:0 auto;padding:48px 32px}
+.mv-en{font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.25em;color:var(--primary);margin-bottom:18px}
+.mv-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:400;line-height:1.6;letter-spacing:.06em;margin-bottom:22px}
+.mv-title em{font-style:normal;color:var(--primary)}
+.mv-text{font-size:.92rem;color:var(--text-mid);line-height:2.2;margin-bottom:34px}
+.mv-btns{display:flex;flex-wrap:wrap;gap:14px}
+.mv-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px;list-style:none}
+.mv-tags li{background:rgba(255,255,255,.85);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:.75rem;color:var(--primary);letter-spacing:.05em}
+
+/* News */
+.news{background:var(--white)}
+.news-wrap{display:grid;grid-template-columns:240px 1fr;gap:48px;max-width:1000px;margin:0 auto}
+.news-list{list-style:none}
+.news-item{display:grid;grid-template-columns:96px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.news-item:first-child{padding-top:0}
+.news-cat{align-self:start;text-align:center;background:var(--primary-pale);color:var(--primary);font-size:.72rem;letter-spacing:.08em;border-radius:3px;padding:4px 0}
+.news-item h3{font-family:'Noto Serif JP',serif;font-size:.95rem;font-weight:500;margin-bottom:4px}
+.news-item p{font-size:.84rem;color:var(--text-mid);line-height:1.95}
+
+/* Policy */
+.policy{background:var(--bg-warm);text-align:center}
+.policy-catch{font-family:'Noto Serif JP',serif;font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:400;line-height:2.1;letter-spacing:.06em;margin:8px 0 28px}
+.policy-catch em{font-style:normal;color:var(--primary)}
+.policy p.body{font-size:.9rem;color:var(--text-mid);line-height:2.3;max-width:680px;margin:0 auto 32px}
+
+/* Greeting */
+.greeting{background:var(--white)}
+.greet-grid{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:start}
+.greet-photo{aspect-ratio:4/5}
+.greet-catch{font-family:'Noto Serif JP',serif;font-size:1.25rem;font-weight:400;line-height:1.9;color:var(--primary);margin-bottom:20px}
+.greet-body p{font-size:.88rem;color:var(--text-mid);line-height:2.2;margin-bottom:16px}
+.greet-sign{text-align:right;font-family:'Noto Serif JP',serif;font-size:.9rem;margin:8px 0 28px}
+.greet-sign b{font-size:1.25rem;font-weight:400;margin-left:12px;letter-spacing:.1em}
+.career-box{background:var(--bg-warm);border-radius:6px;padding:20px 24px;margin-bottom:28px}
+.career-box h4{font-family:'Noto Serif JP',serif;font-size:.88rem;font-weight:500;color:var(--primary);margin-bottom:8px}
+.career-box ul{list-style:none;font-size:.83rem;color:var(--text-mid);line-height:2}
+.career-box li::before{content:'・'}
+
+/* Features */
+.features{background:var(--bg-warm)}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px}
+.feature:last-child{margin-bottom:0}
+.feature:nth-child(even) .feature-img{order:2}
+.feature-img{aspect-ratio:3/2;box-shadow:var(--shadow)}
+.feature-point{font-family:'Cormorant Garamond',serif;font-size:.9rem;letter-spacing:.3em;color:var(--primary);display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.feature-point b{font-size:2.6rem;font-weight:300;line-height:1;letter-spacing:.05em}
+.feature h3{font-family:'Noto Serif JP',serif;font-size:1.3rem;font-weight:400;line-height:1.7;margin-bottom:16px;letter-spacing:.04em}
+.feature p{font-size:.88rem;color:var(--text-mid);line-height:2.2;margin-bottom:22px}
+
+/* Services grid */
+.services{background:var(--white)}
+.svc-grid{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.svc-grid>li{flex:0 0 calc((100% - 32px)/3)}
+.svc-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;height:100%;padding:30px 16px 26px;border:1px solid var(--border);border-radius:6px;background:var(--bg);text-decoration:none;transition:box-shadow .25s,transform .2s,border-color .25s}
+.svc-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--accent)}
+.svc-icon{width:64px;height:64px;border-radius:50%;background:var(--primary-pale);display:flex;align-items:center;justify-content:center}
+.svc-icon svg{width:34px;height:34px;stroke:var(--primary);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.svc-card h3{font-family:'Noto Serif JP',serif;font-size:.98rem;font-weight:500;color:var(--text-dark)}
+.svc-card p{font-size:.78rem;color:var(--text-mid);line-height:1.8}
+.services .more{text-align:center;margin-top:40px}
+
+/* Clinic photos */
+.clinic{background:var(--bg-warm)}
+.clinic-grid{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+.clinic-grid>li{flex:0 0 calc((100% - 48px)/3)}
+.clinic-item .ph{aspect-ratio:4/3;margin-bottom:12px}
+.clinic-item h3{font-family:'Noto Serif JP',serif;font-size:.92rem;font-weight:500;margin-bottom:2px}
+.clinic-item p{font-size:.8rem;color:var(--text-mid);line-height:1.8}
+
+/* Information */
+.info{background:var(--white)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.info-dl{display:grid;grid-template-columns:100px 1fr;border-top:1px solid var(--border)}
+.info-dl dt,.info-dl dd{padding:14px 0;border-bottom:1px solid var(--border);font-size:.86rem;line-height:1.9}
+.info-dl dt{color:var(--text-light);font-size:.78rem;letter-spacing:.06em;padding-top:16px}
+.info-dl a{color:var(--primary);text-decoration:none}
+.info-cards{display:grid;gap:12px;margin-top:28px}
+.info-card{background:var(--bg-warm);border-left:3px solid var(--primary);border-radius:0 6px 6px 0;padding:14px 18px}
+.info-card h4{font-family:'Noto Serif JP',serif;font-size:.88rem;font-weight:500;color:var(--primary);margin-bottom:2px}
+.info-card p{font-size:.8rem;color:var(--text-mid);line-height:1.9}
+.map{width:100%;height:360px;border:0;border-radius:6px;box-shadow:var(--shadow);display:block}
+.info .hours{margin-top:28px}
+
+/* =========================================================
+   SERVICES PAGE
+   ========================================================= */
+.toc{position:sticky;top:var(--header-h);z-index:50;background:rgba(253,252,255,.97);border-bottom:1px solid var(--border);padding:14px 32px;backdrop-filter:blur(6px)}
+.toc ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:1140px;margin:0 auto}
+.toc a{display:block;padding:6px 16px;border:1px solid var(--border);border-radius:20px;font-size:.78rem;color:var(--primary);text-decoration:none;background:var(--white);transition:background .2s,border-color .2s}
+.toc a:hover{background:var(--primary-pale);border-color:var(--primary)}
+.svc-sec{padding:72px 32px;border-bottom:1px solid var(--border)}
+.svc-sec:nth-of-type(even){background:var(--bg-warm)}
+.svc-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}
+.svc-layout .ph{aspect-ratio:4/3;box-shadow:var(--shadow)}
+.svc-h{font-family:'Noto Serif JP',serif;font-size:1.45rem;font-weight:400;letter-spacing:.06em;margin-bottom:6px}
+.svc-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;letter-spacing:.2em;color:var(--primary);margin-bottom:22px}
+.svc-body h3{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:500;color:var(--primary);margin:26px 0 8px;padding-left:12px;border-left:3px solid var(--primary)}
+.svc-body h3:first-child{margin-top:0}
+.svc-body p{font-size:.88rem;color:var(--text-mid);line-height:2.1}
+.svc-body ul{font-size:.87rem;color:var(--text-mid);line-height:2;padding-left:1.3em;margin-top:6px}
+.check{list-style:none;padding:0!important}
+.check li{position:relative;padding-left:1.6em}
+.check li::before{content:'';position:absolute;left:2px;top:.75em;width:10px;height:5px;border-left:1.5px solid var(--primary);border-bottom:1.5px solid var(--primary);transform:rotate(-45deg)}
+.box{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:18px 22px;margin-top:16px}
+.svc-sec:nth-of-type(odd) .box{background:var(--bg-warm)}
+.box h4{font-family:'Noto Serif JP',serif;font-size:.9rem;font-weight:500;margin-bottom:6px}
+.risk{font-size:.8rem!important;color:var(--text-mid);line-height:1.9!important}
+.fee-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.84rem}
+.fee-table th,.fee-table td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.8}
+.fee-table th{background:var(--primary-pale);font-weight:500;color:var(--text-dark);width:28%}
+.todo{background:#fff6d6;color:#7a5b00;font-size:.75rem;padding:1px 6px;border-radius:3px}
+
+/* =========================================================
+   DOCTOR PAGE
+   ========================================================= */
+.doc-grid{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start}
+.doc-grid .ph{aspect-ratio:4/5;box-shadow:var(--shadow)}
+.doc-name-en{font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.2em;color:var(--primary);font-size:.9rem}
+.doc-name{font-family:'Noto Serif JP',serif;font-size:1.9rem;font-weight:400;letter-spacing:.12em;margin:2px 0 4px}
+.doc-role{font-size:.8rem;color:var(--text-light);letter-spacing:.08em;margin-bottom:28px}
+.msg{margin-bottom:28px}
+.msg h3{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:500;color:var(--primary);margin-bottom:10px}
+.msg p{font-size:.88rem;color:var(--text-mid);line-height:2.2}
+.career{width:100%;border-collapse:collapse}
+.career th,.career td{padding:12px 0;border-bottom:1px solid var(--border);font-size:.85rem;text-align:left;vertical-align:top;line-height:1.8}
+.career th{width:90px;color:var(--primary);font-weight:400;font-size:.8rem;letter-spacing:.06em}
+.career td{color:var(--text-mid)}
+.staff{background:var(--bg-warm)}
+.staff-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.staff-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.staff-card .ph{aspect-ratio:3/4;border-radius:0}
+.staff-info{padding:20px 22px 24px}
+.staff-role{font-size:.74rem;letter-spacing:.12em;color:var(--primary);margin-bottom:2px}
+.staff-name{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:500;margin-bottom:8px}
+.staff-msg{font-size:.82rem;color:var(--text-mid);line-height:1.95}
+
+/* =========================================================
+   ACCESS / CONTACT
+   ========================================================= */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.sub-h{font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:500;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.tel-panel{background:var(--primary);color:#fff;border-radius:8px;padding:36px 32px;text-align:center}
+.tel-panel .reserve-tel{font-size:2.6rem}
+.steps{list-style:none;counter-reset:st;display:grid;gap:14px}
+.steps li{counter-increment:st;position:relative;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:16px 18px 16px 64px;font-size:.85rem;color:var(--text-mid);line-height:1.9}
+.steps li::before{content:counter(st);position:absolute;left:18px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:var(--primary-pale);color:var(--primary);font-family:'Cormorant Garamond',serif;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;font-weight:500;color:var(--text-dark)}
+.bring{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.bring li{background:var(--primary-pale);color:var(--primary);border-radius:20px;padding:6px 16px;font-size:.8rem}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1024px){
+  .header-hours{display:none}
+  .gnav-list>li>a{padding:0 14px}
+}
+@media (max-width:900px){
+  :root{--header-h:60px}
+  .header-top{height:60px;padding:0 12px 0 20px}
+  .header-info,.gnav{display:none}
+  .hamburger{display:flex}
+  section{padding:64px 20px}
+  .page-hero{padding:48px 20px 40px}
+  .mv{min-height:auto;padding:24px 0 8px}
+  .mv-photo::after{background:linear-gradient(180deg,rgba(253,252,255,.75) 0%,rgba(253,252,255,.92) 60%)}
+  .mv-inner{padding:48px 20px}
+  .news-wrap,.greet-grid,.feature,.info-grid,.svc-layout,.doc-grid,.two-col,.foot-grid{grid-template-columns:1fr;gap:28px}
+  .feature{margin-bottom:56px}
+  .feature:nth-child(even) .feature-img{order:0}
+  .greet-photo,.doc-grid .ph{max-width:340px}
+  .svc-grid{gap:12px}
+  .svc-grid>li{flex:0 0 calc((100% - 12px)/2)}
+  .staff-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .clinic-grid{gap:16px}
+  .clinic-grid>li{flex:0 0 calc((100% - 16px)/2)}
+  .toc{padding:10px 12px}
+  .toc ul{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .toc ul::-webkit-scrollbar{display:none}
+  .toc a{white-space:nowrap}
+  .svc-sec{padding:56px 20px}
+  .reserve{padding:56px 20px}
+  .reserve-tel{font-size:2.2rem}
+  .site-footer{padding:48px 20px 96px}
+  .sp-only{display:inline}
+  .fixed-bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:98;box-shadow:0 -4px 16px rgba(30,26,46,.12)}
+  .fixed-bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:60px;text-decoration:none;font-size:.82rem;letter-spacing:.06em}
+  .fixed-bar a small{font-size:.7rem;opacity:.85}
+  .fb-tel{background:var(--primary);color:#fff}
+  .fb-hours{background:var(--white);color:var(--primary);border-top:1px solid var(--border)}
+}
+@media (max-width:560px){
+  .svc-card{padding:22px 10px 20px}
+  .svc-card p{display:none}
+  .svc-icon{width:54px;height:54px}
+  .news-item{grid-template-columns:1fr;gap:8px}
+  .news-cat{justify-self:start;padding:3px 12px}
+  .clinic-grid{gap:12px}
+  .clinic-grid>li{flex:0 0 calc((100% - 12px)/2)}
+  .clinic-item p{display:none}
+  .staff-grid{grid-template-columns:1fr}
+  .hours{font-size:.76rem}
+  .hours th,.hours td{padding:8px 2px}
+  .info-dl{grid-template-columns:84px 1fr}
+}
+.two-col .ph{aspect-ratio:4/3;box-shadow:var(--shadow)}
+
+/* 写真がまだ無い枠は表示しない（写真を入れると自動で表示されます） */
+.ph.is-missing,.clinic-item.is-missing,.clinic.is-empty{display:none}
+.feature.no-photo{grid-template-columns:1fr;max-width:760px;margin-left:auto;margin-right:auto}
+.svc-layout.no-photo{grid-template-columns:1fr;max-width:860px}
+.two-col .ph.is-missing+p{display:none}
