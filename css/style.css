@@ -377,3 +377,15 @@ section{padding:88px 32px}
 @media (max-width:900px){.svc-sec{scroll-margin-top:calc(var(--header-h) + 64px)}}
 .sp-only{display:none}
 @media (max-width:900px){.sp-only{display:inline}}
+
+/* ミラクルデンチャー公式サイトへのリンク */
+.md-official{margin-top:16px}
+.md-official a{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-size:.9rem;text-decoration:none;border-bottom:1px solid var(--primary);padding-bottom:2px}
+.md-official a::after{content:'↗';font-size:.85em}
+.md-official a:hover{opacity:.75}
+.md-banner-wrap{text-align:center;margin-top:32px}
+.md-banner-wrap.left{text-align:left;margin:14px 0 6px}
+.md-banner{display:inline-block;background:none;border-radius:4px;max-width:100%;transition:opacity .2s}
+.md-banner::before{display:none}
+.md-banner img{width:auto;height:auto;max-width:min(468px,100%);object-fit:contain}
+.md-banner:hover{opacity:.85}
